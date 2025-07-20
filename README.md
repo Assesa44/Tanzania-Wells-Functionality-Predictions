@@ -161,33 +161,30 @@ Top contributing features:
 This section outlines key findings from the analysis and offers actionable recommendations for stakeholders, particularly the Tanzanian government and water sector agencies.
 
 ### Key Insights
+
+##### Funders vs Wells Functionality
 - Government-funded wells are the most numerous but also the least reliable.
 Despite the government funding the highest number of wells across the country, it is also associated with the highest number of non-functional wells. This raises concerns about the quality of installation, oversight, or post-installation maintenance.
 
-##### Funders vs Wells Functionality
+![image.png](attachment:image.png)
 
-
-
+##### Installers vs Wells Functionality
 - Wells installed by the District Water Engineer have significantly higher durability.
 When examining functionality by installer, wells installed by the District Water Engineer exhibited the highest functionality rates, indicating that technical expertise and standardized procedures have a positive impact on sustainability. This suggests a potential gap in the skills or practices of other installers.
 
-##### Installers vs Wells Functionality
+![image-3.png](attachment:image-3.png)
 
-
-
+##### Extraction_Type vs Wells Functionality
 - Gravity-fed wells show strong long-term performance.
 Wells that utilize gravity as their extraction method show the highest rate of functionality compared to other extraction types such as hand pumps or motorized systems. This could be due to their mechanical simplicity and lower maintenance requirements.
 
-##### Extraction_Type vs Wells Functionality
+![image-2.png](attachment:image-2.png)
 
-
-
+##### Source vs Well Functionality
 - Spring-based water sources are associated with high functionality.
 Among all water source types, springs produced the most consistently functional wells. This suggests that in addition to improving installation quality, careful selection of the water source itself plays a critical role in the longevity of a well.
 
-##### Source vs Well Functionality
-
-
+![image-4.png](attachment:image-4.png)
 
 ---
 
