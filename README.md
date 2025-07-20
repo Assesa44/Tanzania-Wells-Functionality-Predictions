@@ -18,8 +18,8 @@ As of 2023, only 61% of households in Tanzania have access to a basic water-supp
 This project seeks to:
 - Investigate why the percentage of households that have access to basic water is slightly above 50%, despite the National Water Sector Development Strategy being at work for almost 2 decades.
 
-- Leverage machine learning to help the Government keep track of the functionality status of the wells across the country, whether functional, needs repair or non-functional.
-
+- Leverage supervised machine learning to help the Government keep track of the functionality status of the wells across the country, whether functional, needs repair or non-functional.
+ 
 - Provide recommendations to help the Tanzanian Government accelerate their National Water Sector Development Strategy.
 
 ---
@@ -32,6 +32,8 @@ This project seeks to:
     - *Non-functional*
 
     - *Functional but needs repair*
+
+    from features like construction year, installer, funder, and geolocation data.
 
 - Achieve a target classification accuracy of **at least 85%** and an F1-score of **at least 85%**.
 
@@ -64,22 +66,203 @@ This repository contains 3 dataset:
 
 - `Training_Set_Labels.csv` - Contains target variables. (59400 rows, 40 columns)
 
-- `Test_Set_Values` - Contains test values for testing for generalization.
+- `Test_Set_Values` - Contains test values for testing for generalization. (14,850 records)
+
+Sample columns include:
+
+* `funder`, `installer`, `construction_year`
+* `gps_height`, `longitude`, `latitude`
+* `extraction_type`, `water_quality`, `quantity`
+* `region`, `district_code`, `ward`, `subvillage`
+
+---
 
 ## **Data Wrangling Process**
 During the mini data exploration, we found that the dataset had some data quality issues, in this section we:
 - Dealt with missing values
 
-- Converted records to their correct data types
+- 
 
 - Dealt with categorical issues
 
 - Encoded the `Training_Set_Labels` dataset in preparation to EDA.
 
-## **Exploratory Data Analysis (EDA)**
+## 🧹 Data Preparation
+
+We followed best practices to prepare the data:
+
+### 1. **Cleaning**
+
+* Handled missing values
+* Converted records to their correct data types and standardized text (e.g., multiple versions of "other")
+* Dropped high-cardinality, redundant, or uninformative columns: `subvillage`, `recorded_by`, `scheme_name`, etc.
+
+### 2. **Feature Engineering**
+
+* Created meaningful features: `years_since_construction`
+* Combined location and source variables
+* Handled high-cardinality text with frequency encoding
+
+### 3. **Encoding**
+
+* Categorical variables with:
+
+  * **Ordinal Encoding** (if `<= 50` unique values)
+  * **Frequency Encoding** (if `> 50` unique values)
+* Stored encoders in a dictionary for consistent transformation of test set
+
+### 4. **Class Balancing**
+
+* Applied **SMOTE (Synthetic Minority Oversampling Technique)** to address imbalance in target labels
+
+---
+
+## 🤖 Modeling
+
+We tested multiple models and tuned them iteratively:
+
+### 1. **Baseline Model**
+
+* Logistic Regression (performed poorly due to multi-class nature)
+
+### 2. **Decision Tree Classifier**
+
+* Tuned `max_depth`, `min_samples_leaf`, `criterion`
+* Detected overfitting from training vs test score differences
+* Used feature_importances_ to assess important features
+
+### 3. **Random Forest Classifier** ✅
+
+* Final model used `criterion='entropy'`
+* Tuned using **RandomizedSearchCV**
+* Achieved 93% training accuracy, 84% cross-validated accuracy
+
+### Evaluation Metrics
+
+* **Accuracy**: Primary metric for final selection
+* **Precision, Recall, F1-Score**: Reported per class
+* **Confusion Matrix**: Visualized and analyzed in detail
+
+---
+
+## ✅ Evaluation
+
+### Final Cross-Validated Performance
+
+* Accuracy: \~84%
+* Training Accuracy: \~93%
+* No evidence of overfitting (based on generalization gap + F1 score)
+
+### Confusion Matrix Analysis
+
+* Model performs best on majority class: `functional`
+* Reasonable performance on minority classes after SMOTE
+
+### Feature Importance
+
+Top contributing features:
+
+* `quantity`, `source_type`, `installer`, `region`
+* `extraction_type`, `management`
+
+---
+
+## Insights & Recommendations
+This section outlines key findings from the analysis and offers actionable recommendations for stakeholders, particularly the Tanzanian government and water sector agencies.
+
+### Key Insights
+Government-funded wells are the most numerous but also the least reliable.
+Despite the government funding the highest number of wells across the country, it is also associated with the highest number of non-functional wells. This raises concerns about the quality of installation, oversight, or post-installation maintenance.
+
+Wells installed by the District Water Engineer have significantly higher durability.
+When examining functionality by installer, wells installed by the District Water Engineer exhibited the highest functionality rates, indicating that technical expertise and standardized procedures have a positive impact on sustainability. This suggests a potential gap in the skills or practices of other installers.
+
+Gravity-fed wells show strong long-term performance.
+Wells that utilize gravity as their extraction method show the highest rate of functionality compared to other extraction types such as hand pumps or motorized systems. This could be due to their mechanical simplicity and lower maintenance requirements.
+
+Spring-based water sources are associated with high functionality.
+Among all water source types, springs produced the most consistently functional wells. This suggests that in addition to improving installation quality, careful selection of the water source itself plays a critical role in the longevity of a well.
+
+Management and permit status were not as influential as expected.
+Features like permit and public_meeting showed little to no influence in the predictive modeling process. This may indicate either a lack of reliable data capture in these areas or limited practical impact on well functionality.
+
+### Strategic Recommendations
+Based on the insights above, we recommend the following actionable steps for improving rural water access sustainability:
+
+Enhance government accountability in project execution.
+Establish monitoring frameworks for government-funded wells to ensure installations follow quality assurance protocols and receive proper maintenance.
+
+Standardize installations through certified professionals.
+Require that all wells, especially those funded by public or NGO sources, be installed under the supervision of certified District Water Engineers.
+
+Adopt gravity-based extraction systems wherever viable.
+Given their durability and low maintenance, gravity-fed wells should be prioritized, particularly in regions where topography supports them.
+
+Prioritize spring sources during site selection.
+Water sourcing should be more deliberate. Feasibility studies should assess whether natural springs are available and accessible before selecting a site.
+
+Invest in data quality and infrastructure management systems.
+Many records lacked reliable information in fields such as permit and public_meeting. Better data collection can enhance future analysis and project planning
+
+---
+
+## 🚀 Deployment Suggestions
+
+This model is production-ready and can be deployed as:
+
+* An **API endpoint** (using Flask/FastAPI)
+* Integrated into a **dashboard** to visualize predictions on a map of Tanzania
+* Embedded in a **mobile data collection tool** for field engineers
+
+---
+
+## 🛠 Technologies Used
+
+* Python 3.10+
+* pandas, numpy
+* scikit-learn, imbalanced-learn (SMOTE)
+* seaborn, matplotlib
+* Jupyter Notebook
+
+---
+
+## 💻 How to Run the Project
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Assesa44/water-well-status-prediction
+cd water-well-status-prediction
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Launch the notebook:
+
+```bash
+jupyter notebook wells_analysis.ipynb
+```
+
+---
+
+## 👩🏾‍💻 Author
+
+**Vanessa Sandra Assesa**
+Data Science Student, Moringa School
+
+* Email: [veesandra30@gmail.com](mailto:veesandra30@gmail.com)
+* GitHub: [@Assesa44](https://github.com/Assesa44)
+* LinkedIn: [vanessa-sandra](https://linkedin.com/in/vanessa-sandra-7409b0320)
+
+---
 
 
 ## **Project Structure**
+```
 Kenya-Ecommerce-Reviews/
 │
 ├── Data/
@@ -102,3 +285,6 @@ Kenya-Ecommerce-Reviews/
 │   └── ecommerce_insights_deck.pptx
 │
 └── README.md
+```
+
+Let’s build a better future — one well at a time 🌍💧
