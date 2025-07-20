@@ -166,31 +166,30 @@ Despite the government funding the highest number of wells across the country, i
 
 ##### Funders vs Wells Functionality
 
-![alt text](funders_vs_functionality.png)
+
 
 - Wells installed by the District Water Engineer have significantly higher durability.
 When examining functionality by installer, wells installed by the District Water Engineer exhibited the highest functionality rates, indicating that technical expertise and standardized procedures have a positive impact on sustainability. This suggests a potential gap in the skills or practices of other installers.
 
 ##### Installers vs Wells Functionality
 
-![alt text](extraction_type_vs_functionality.png)
+
 
 - Gravity-fed wells show strong long-term performance.
 Wells that utilize gravity as their extraction method show the highest rate of functionality compared to other extraction types such as hand pumps or motorized systems. This could be due to their mechanical simplicity and lower maintenance requirements.
 
 ##### Extraction_Type vs Wells Functionality
 
-![alt text](extraction_type_vs_functionality-1.png)
+
 
 - Spring-based water sources are associated with high functionality.
 Among all water source types, springs produced the most consistently functional wells. This suggests that in addition to improving installation quality, careful selection of the water source itself plays a critical role in the longevity of a well.
 
 ##### Source vs Well Functionality
 
-![alt text](source_vs_functionality.png)
 
-- Management and permit status were not as influential as expected.
-Features like permit and public_meeting showed little to no influence in the predictive modeling process. This may indicate either a lack of reliable data capture in these areas or limited practical impact on well functionality.
+
+---
 
 ### Strategic Recommendations
 Based on the insights above, we recommend the following actionable steps for improving rural water access sustainability:
