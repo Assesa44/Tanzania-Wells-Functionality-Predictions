@@ -252,10 +252,10 @@ Tanzania-Wells-Functionality-Predictions/
 ├── .gitignore
 │   
 ├── Tableau/
-│   └── final_dashboard.twbx
+│   └── Wells_Prediction_dashboard.twbx
 │
 ├── Presentation/
-│   └── insights_deck.pptx
+│   └── Tanzania_Wells_Functionality_Predictions.pptx
 │
 ├── README.md
 |
