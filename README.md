@@ -13,7 +13,7 @@ As part of its National Water Sector Development Strategy, the Tanzanian governm
 ---
 
 ### **Project Overview**
-As of 2023, only 61% of households in Tanzania have access to a basic water-supply. The Tanzanian government has made efforts to bridge this gap, however, it has been a slow really descent. 
+As of 2023, only 61% of households in Tanzania have access to a basic water-supply. The Tanzanian government has made efforts to bridge this gap, however, it has been a really slow descent. 
 
 This project seeks to:
 - Investigate why the percentage of households that have access to basic water is slightly above 50%, despite the National Water Sector Development Strategy being at work for almost 2 decades.
@@ -58,3 +58,47 @@ This project seeks to:
 This project required a dataset that represents Tanzania's water systems updated and created by people who manage the said systems.
 
 The data used in this project was sourced from [DrivenData's Tanzania Water Pumps competition](https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/23/). Who in turn sourced it from Taarifa, an open source platform that aggregates data from the Tanzania Ministry of Water and the Tanzanian Ministry of Water.
+
+This repository contains 3 dataset:
+- `Training_Set_Values.csv` - Contains features/predictors. (59400 rows, 40 columns)
+
+- `Training_Set_Labels.csv` - Contains target variables. (59400 rows, 40 columns)
+
+- `Test_Set_Values` - Contains test values for testing for generalization.
+
+## **Data Wrangling Process**
+During the mini data exploration, we found that the dataset had some data quality issues, in this section we:
+- Dealt with missing values
+
+- Converted records to their correct data types
+
+- Dealt with categorical issues
+
+- Encoded the `Training_Set_Labels` dataset in preparation to EDA.
+
+## **Exploratory Data Analysis (EDA)**
+
+
+## **Project Structure**
+Kenya-Ecommerce-Reviews/
+│
+├── Data/
+│   └── cleaned_Data/
+│   └── Raw_Data/
+|   └── Metadata.txt/
+|
+├── Images/
+|
+├── Notebooks/
+│   └── wells_analysis.ipynb
+│
+├── Scraper/
+│   └── jumia_scraper.py and Scraping_setup.ipynb
+│
+├── Tableau/
+│   └── final_dashboard.twbx
+│
+├── Presentation/
+│   └── ecommerce_insights_deck.pptx
+│
+└── README.md
