@@ -87,13 +87,7 @@ We followed best practices to prepare the data:
 * Converted records to their correct data types and standardized text (e.g., multiple versions of "other")
 * Dropped high-cardinality, redundant, or uninformative columns: `subvillage`, `recorded_by`, `scheme_name`, etc.
 
-### 2. **Feature Engineering**
-
-* Created meaningful features: `years_since_construction`
-* Combined location and source variables
-* Handled high-cardinality text with frequency encoding
-
-### 3. **Encoding**
+### 2. **Encoding**
 
 * Categorical variables with:
 
@@ -101,7 +95,7 @@ We followed best practices to prepare the data:
   * **Frequency Encoding** (if `> 50` unique values)
 * Stored encoders in a dictionary for consistent transformation of test set
 
-### 4. **Class Balancing**
+### 3. **Class Balancing**
 
 * Applied **SMOTE (Synthetic Minority Oversampling Technique)** to address imbalance in target labels
 
@@ -125,7 +119,7 @@ We tested multiple models and tuned them iteratively:
 
 * Final model used `criterion='entropy'`
 * Tuned using **RandomizedSearchCV**
-* Achieved 93% training accuracy, 84% cross-validated accuracy
+* Achieved 88% training accuracy, 82% cross-validated accuracy
 
 ### Evaluation Metrics
 
@@ -137,16 +131,16 @@ We tested multiple models and tuned them iteratively:
 
 ## ✅ Evaluation
 
-### Final Cross-Validated Performance
+### Final Model Performance
 
-* Accuracy: \~84%
-* Training Accuracy: \~93%
-* No evidence of overfitting (based on generalization gap + F1 score)
+* Test Accuracy: \~77%
+* Training Accuracy: \~88%
+* No evidence of overfitting (evidence of class imbalance)
 
 ### Confusion Matrix Analysis
 
 * Model performs best on majority class: `functional`
-* Reasonable performance on minority classes after SMOTE
+* Poor performance on under represented class
 
 ### Feature Importance
 
