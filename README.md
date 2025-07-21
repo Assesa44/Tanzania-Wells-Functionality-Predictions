@@ -77,7 +77,7 @@ Sample columns include:
 
 ---
 
-## 🧹 Data Preparation
+## Data Preparation
 
 We followed best practices to prepare the data:
 
@@ -101,7 +101,7 @@ We followed best practices to prepare the data:
 
 ---
 
-## 🤖 Modeling
+## Modeling
 
 We tested multiple models and tuned them iteratively:
 
@@ -129,7 +129,7 @@ We tested multiple models and tuned them iteratively:
 
 ---
 
-## ✅ Evaluation
+## Evaluation
 
 ### Final Model Performance
 
