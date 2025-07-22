@@ -77,7 +77,7 @@ Sample columns include:
 
 ---
 
-## Data Preparation
+## **Data Preparation**
 
 We followed best practices to prepare the data:
 
@@ -101,7 +101,7 @@ We followed best practices to prepare the data:
 
 ---
 
-## Modeling
+## **Modeling**
 
 We tested multiple models and tuned them iteratively:
 
@@ -129,7 +129,7 @@ We tested multiple models and tuned them iteratively:
 
 ---
 
-## Evaluation
+## **Evaluation**
 
 ### Final Model Performance
 
@@ -151,7 +151,7 @@ Top contributing features:
 
 ---
 
-## Insights & Recommendations
+## **Insights & Recommendations**
 This section outlines key findings from the analysis and offers actionable recommendations for stakeholders, particularly the Tanzanian government and water sector agencies.
 
 ### Key Insights
@@ -170,13 +170,13 @@ When examining functionality by installer, wells installed by the District Water
 
 ##### Extraction_Type vs Wells Functionality
 - Gravity-fed wells show strong long-term performance.
-Wells that utilize gravity as their extraction method show the highest rate of functionality compared to other extraction types such as hand pumps or motorized systems. This could be due to their mechanical simplicity and lower maintenance requirements.
+Wells that utilize gravity as their extraction method show the highest rate of functionality compared to other extraction types, such as hand pumps or motorized systems. This could be due to their mechanical simplicity and lower maintenance requirements.
 
 <img width="728" height="380" alt="image" src="https://github.com/user-attachments/assets/340b7e57-868a-4ab2-a88b-f813d9dcd9c4" />
 
 ##### Source vs Well Functionality
 - Spring-based water sources are associated with high functionality.
-Among all water source types, springs produced the most consistently functional wells. This suggests that in addition to improving installation quality, careful selection of the water source itself plays a critical role in the longevity of a well.
+Among all water source types, springs produced the most consistently functional wells. This suggests that, in addition to improving installation quality, careful selection of the water source itself plays a critical role in the longevity of a well.
 
 <img width="728" height="380" alt="image" src="https://github.com/user-attachments/assets/b536970f-b328-4b0f-9a7b-83a3e52a7f88" />
 
@@ -198,8 +198,16 @@ Given their durability and low maintenance, gravity-fed wells should be prioriti
 Water sourcing should be more deliberate. Feasibility studies should assess whether natural springs are available and accessible before selecting a site.
 
 5. Invest in data quality and infrastructure management systems.
-Many records lacked reliable information in fields such as permit and public_meeting. Better data collection can enhance future analysis and project planning
+Many records lacked reliable information in fields such as permit and public meeting. Better data collection can enhance future analysis and project planning
 
+---
+
+## **Conclusion**
+Machine Learning can enhance water access, and while further improvements are always possible, the current model provides a solid foundation for decision making and resource allocation, and represents a strong first step towards sustainable water access using data science.
+
+The next step is deployment. With the current model, the Tanzanian government can begin monitoring their past projects, allocating resources to places needed, and start planning their next projects.
+
+*Water is not just a basic need. Water is LIFE!*
 ---
 
 ## 🛠 Technologies Used
