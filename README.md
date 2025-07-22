@@ -160,7 +160,7 @@ This section outlines key findings from the analysis and offers actionable recom
 - Government-funded wells are the most numerous but also the least reliable.
 Despite the government funding the highest number of wells across the country, it is also associated with the highest number of non-functional wells. This raises concerns about the quality of installation, oversight, or post-installation maintenance.
 
-![image.png](attachment:image.png)
+<img width="1290" height="674" alt="image" src="https://github.com/user-attachments/assets/a1e0e592-a60b-4d20-8969-2de9d9e868f8" />
 
 ##### Installers vs Wells Functionality
 - Wells installed by the District Water Engineer have significantly higher durability.
