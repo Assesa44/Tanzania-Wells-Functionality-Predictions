@@ -225,8 +225,7 @@ The next step is deployment. With the current model, the Tanzanian government ca
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Assesa44/water-well-status-prediction
-cd water-well-status-prediction
+git clone https://github.com/Assesa44/Tanzania-Wells-Functionality-Prediction
 ```
 
 2. Install dependencies:
