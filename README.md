@@ -4,23 +4,23 @@
 
 ## **Business Understanding**
 ### **Background**
-In a nation where one third of the country is arid to semi-arid, access to basic water has been a constant challenge for the longest time. Despite the government's effort to deal with this issue, Tanzania has remained a water-stressed country.
+In a nation where one-third of the country is arid to semi-arid, access to basic water has been a constant challenge for the longest time. Despite the government's effort to deal with this issue, Tanzania has remained a water-stressed country.
 
-Other than the three major lakes in the region, ground water has been the major source of water for the nation's people. It is at the back of this that in 2006, the Government of Tanzania adopted a National Water Sector Development Strategy that aimed to promote integrated water resources management and the development of urban and rural water supply.
+Other than the three major lakes in the region, groundwater has been the major source of water for the nation's people. It is in this context that, in 2006, the Government of Tanzania adopted a National Water Sector Development Strategy, which aimed to promote integrated water resources management and the development of urban and rural water supply.
 
-As part of its National Water Sector Development Strategy, the Tanzanian government prioritized decentralized water supply infrastructure, with a strong emphasis on constructing wells and boreholes throughout the country. As much as it has made significant progress improving the access of thousands of citizens, it still has a long way to go.
+As part of its National Water Sector Development Strategy, the Tanzanian government prioritized decentralized water supply infrastructure, with a strong emphasis on constructing wells and boreholes throughout the country. Although it has made significant progress in improving access for thousands of citizens, it still has a long way to go.
 
 ---
 
 ### **Project Overview**
-As of 2023, only 61% of households in Tanzania have access to a basic water-supply. The Tanzanian government has made efforts to bridge this gap, however, it has been a really slow descent. 
+As of 2023, only 61% of households in Tanzania have access to a basic water supply. The Tanzanian government has made efforts to bridge this gap; however, it has been a slow descent. 
 
 This project seeks to:
-- Investigate why the percentage of households that have access to basic water is slightly above 50%, despite the National Water Sector Development Strategy being at work for almost 2 decades.
+- Investigate why the percentage of households that have access to basic water is slightly above 50%, despite the National Water Sector Development Strategy being in place for almost 2 decades.
 
-- Leverage supervised machine learning to help the Government keep track of the functionality status of the wells across the country, whether functional, needs repair or non-functional.
+- Leverage supervised machine learning to help the Government keep track of the functionality status of the wells across the country, whether functional, needs repair, or non-functional.
  
-- Provide recommendations to help the Tanzanian Government accelerate their National Water Sector Development Strategy.
+- Provide recommendations to help the Tanzanian Government accelerate its National Water Sector Development Strategy.
 
 ---
 
@@ -39,14 +39,14 @@ This project seeks to:
 
 - Identify key features (e.g., what kind of pump is operating, when it was installed, how it is managed) that drive well functionality.
 
-- Support National Water Sector Development Strategy by identifying underperforming or non-functional wells using data science tools.
+- Support the National Water Sector Development Strategy by identifying underperforming or non-functional wells using data science tools.
 
 - Develop a blueprint system that can be adapted for similar water access initiatives globally.
 
 ---
 
 ### **StakeHolders**
-- *The Tanzanian Government*: By predicting which wells are functional, non functional or need repairs, the government can have a clear idea of where resources are needed the most and help them drive their Water Development Strategy even further and improve the country's water situation. 
+- *The Tanzanian Government*: By predicting which wells are functional, non-functional, or need repairs, the government can have a clear idea of where resources are needed the most and help them drive their Water Development Strategy even further and improve the country's water situation. 
 
 - *External Donors*: These are individuals or institutions who provide resources to help the nation.
 
@@ -59,9 +59,9 @@ This project seeks to:
 ## **Data Understanding**
 This project required a dataset that represents Tanzania's water systems updated and created by people who manage the said systems.
 
-The data used in this project was sourced from [DrivenData's Tanzania Water Pumps competition](https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/23/). Who in turn sourced it from Taarifa, an open source platform that aggregates data from the Tanzania Ministry of Water and the Tanzanian Ministry of Water.
+The data used in this project was sourced from [DrivenData's Tanzania Water Pumps competition](https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/23/), which in turn sourced it from Taarifa, an open source platform that aggregates data from the Tanzania Ministry of Water and the Tanzanian Ministry of Water.
 
-This repository contains 3 dataset:
+This repository contains 3 datasets:
 - `Training_Set_Values.csv` - Contains features/predictors. (59400 rows, 40 columns)
 
 - `Training_Set_Labels.csv` - Contains target variables. (59400 rows, 40 columns)
@@ -93,7 +93,7 @@ We followed best practices to prepare the data:
 
   * **Ordinal Encoding** (if `<= 50` unique values)
   * **Frequency Encoding** (if `> 50` unique values)
-* Stored encoders in a dictionary for consistent transformation of test set
+* Stored encoders in a dictionary for consistent transformation of the test set
 
 ### 3. **Class Balancing**
 
@@ -139,7 +139,7 @@ We tested multiple models and tuned them iteratively:
 
 ### Confusion Matrix Analysis
 
-* Model performs best on majority class: `functional`
+* Model performs best on the majority class: `functional`
 * Poor performance on under represented class
 
 ### Feature Importance
@@ -160,25 +160,25 @@ This section outlines key findings from the analysis and offers actionable recom
 - Government-funded wells are the most numerous but also the least reliable.
 Despite the government funding the highest number of wells across the country, it is also associated with the highest number of non-functional wells. This raises concerns about the quality of installation, oversight, or post-installation maintenance.
 
-<img width="1290" height="674" alt="image" src="https://github.com/user-attachments/assets/a1e0e592-a60b-4d20-8969-2de9d9e868f8" />
+<img width="728" height="380" alt="image" src="https://github.com/user-attachments/assets/41cab934-3872-47e0-b597-831c38f9ca9d" />
 
 ##### Installers vs Wells Functionality
 - Wells installed by the District Water Engineer have significantly higher durability.
 When examining functionality by installer, wells installed by the District Water Engineer exhibited the highest functionality rates, indicating that technical expertise and standardized procedures have a positive impact on sustainability. This suggests a potential gap in the skills or practices of other installers.
 
-![image-3.png](attachment:image-3.png)
+<img width="728" height="380" alt="image" src="https://github.com/user-attachments/assets/02a4dc9c-51c0-4e98-a2d5-80e099ee656a" />
 
 ##### Extraction_Type vs Wells Functionality
 - Gravity-fed wells show strong long-term performance.
 Wells that utilize gravity as their extraction method show the highest rate of functionality compared to other extraction types such as hand pumps or motorized systems. This could be due to their mechanical simplicity and lower maintenance requirements.
 
-![image-2.png](attachment:image-2.png)
+<img width="728" height="380" alt="image" src="https://github.com/user-attachments/assets/340b7e57-868a-4ab2-a88b-f813d9dcd9c4" />
 
 ##### Source vs Well Functionality
 - Spring-based water sources are associated with high functionality.
 Among all water source types, springs produced the most consistently functional wells. This suggests that in addition to improving installation quality, careful selection of the water source itself plays a critical role in the longevity of a well.
 
-![image-4.png](attachment:image-4.png)
+<img width="728" height="380" alt="image" src="https://github.com/user-attachments/assets/b536970f-b328-4b0f-9a7b-83a3e52a7f88" />
 
 ---
 
@@ -267,7 +267,6 @@ Tanzania-Wells-Functionality-Predictions/
 ## 👩🏾‍💻 Author
 
 **Vanessa Sandra Assesa**
-Data Science Student, Moringa School
 
 * Email: [veesandra30@gmail.com](mailto:veesandra30@gmail.com)
 * GitHub: [@Assesa44](https://github.com/Assesa44)
